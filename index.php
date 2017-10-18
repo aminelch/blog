@@ -3,14 +3,18 @@ require "core/database.php";
 require "core/database_func.php";
 
  $allposts=getAllPosts($db);
+ $postsCount=getPostsCount($db);
 
- foreach ( $allposts as $k):
+ echo "<div style='color=#fff;'><center><h2> You have {$postsCount} posts </center></h2></div>";
+
+ foreach ( $allposts as $post):
+
 ?>
-	<h3><php echo $k->title;?></h3>
-	<p><em><=$k->author;?></em><br><em><=$k->date;?></em></p>
-	<p><=$k->content;?></p>
-
-
+<h2><?=$post->title; ?></h2>
+<p><em>by <?=$post->author; ?></em>
+	<?=$post->date; ?>
+</p>
+<p><?=$post->content; ?></p>
 
 <?php endforeach; ?>
 

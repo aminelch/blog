@@ -2,9 +2,9 @@
 
 function getAllPosts($db){
 try{
-    $select=$db->query('SELECT * FROM articles ORDER BY id DESC');
-    $articles=$select->fetchAll();
-  return $articles;
+    $select=$db->query('SELECT * FROM posts ORDER BY id DESC');
+    $posts=$select->fetchAll();
+  return $posts;
 }
 catch (PDOException $e){
     return null;
@@ -14,7 +14,7 @@ catch (PDOException $e){
 
 function getPostById($db,$id){
   $id=$db->quote($id);
-  $select=$db->query("SELECT * FROM articles WHERE id= $id");
+  $select=$db->query("SELECT * FROM posts WHERE id= $id");
   $article=$select->fetch();
   return $article;
    
@@ -25,6 +25,12 @@ function getPostById($db,$id){
 
 function deletePost($db,$id){
   $id=$db->quote($id);
-  $req=$db->query("DELETE FROM articles WHERE id= $id");
+  $req=$db->query("DELETE FROM posts WHERE id= $id");
   return $req->rowCount();
+}
+
+function getPostsCount($db){
+  $c= $db->query("SELECT id from posts")->rowCount();
+  return $c;
+
 }
