@@ -9,7 +9,7 @@ try{
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
 	$db->exec("SET CHARACTER SET utf8");
 }catch(Exception $e){
-	echo 'impossible de se connecter au base de données<br>';
+	echo "connection couldn't etablished";
 	echo '<b>'.$e->getMessage().'</b>';
 	die();
 }
