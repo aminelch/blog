@@ -29,6 +29,11 @@ function deletePost($db,$id){
   return $req->rowCount();
 }
 
+/**
+ * Get posts count 
+ * @param  [type] $db [the database linker used to deploy request]
+ * @return [int]     [number of posts exist]
+ */
 function getPostsCount($db){
   $c= $db->query("SELECT id from posts")->rowCount();
   return $c;

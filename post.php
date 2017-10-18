@@ -2,14 +2,16 @@
 require "core/database.php";
 require "core/database_func.php";
 
-if(isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id']) && $_GET['id']>0):
+$PostCount=getPostsCount($db);
+
+if(isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id']) && $_GET['id']<= $PostCount):
     extract($_GET);
     $post=getPostById($db, $id);
     // var_dump($article);
     // die();
 
 else:
-    header('Location: 404.php?error=1');
+      $post=getPostById($db, 1);
 endif;
 ?>
 

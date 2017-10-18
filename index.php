@@ -10,10 +10,11 @@ require "core/database_func.php";
  foreach ( $allposts as $post):
 
 ?>
-<h2><?=$post->title; ?></h2>
+<h2><a href="post.php?id=<?=$post->id; ?>"><?=$post->title; ?></a></h2>
 <p><em>by <?=$post->author; ?></em>
 	<?=$post->date; ?>
 </p>
+<img src="http://lorempixel.com/640/460/">
 <p><?=$post->content; ?></p>
 
 <?php endforeach; ?>
