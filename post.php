@@ -60,12 +60,12 @@ endif;
     <!-- Navigation -->
     <nav id="main-menu">
         <ul class="nav nav-vertical">
-            <li><a href="index-2.html#start"><i class="pe-7s-home"></i><span>Start</span></a></li>
-            <li><a href="index-2.html#resume"><i class="pe-7s-ribbon"></i><span>Resume</span></a></li>
-            <li><a href="index-2.html#portfolio"><i class="pe-7s-monitor"></i><span>Portfolio</span></a></li>
-            <li><a href="index-2.html#clients"><i class="pe-7s-comment"></i><span>Clients</span></a></li>
-            <li><a href="index-2.html#latest-posts"><i class="pe-7s-copy-file"></i><span>Latest Posts</span></a></li>
-            <li><a href="index-2.html#contact"><i class="pe-7s-mail"></i><span>Contact</span></a></li>
+            <li><a href="../index.html#start"><i class="pe-7s-home"></i><span>Start</span></a></li>
+            <li><a href="../index.html#resume"><i class="pe-7s-ribbon"></i><span>Resume</span></a></li>
+            <li><a href="../index.html#portfolio"><i class="pe-7s-monitor"></i><span>Portfolio</span></a></li>
+            <li><a href="../index.html#clients"><i class="pe-7s-comment"></i><span>Clients</span></a></li>
+            <li><a href="../index.html#latest-posts"><i class="pe-7s-copy-file"></i><span>Latest Posts</span></a></li>
+            <li><a href="../index-2.html#contact"><i class="pe-7s-mail"></i><span>Contact</span></a></li>
         </ul>
         <span class="selector"></span>
     </nav>
@@ -97,8 +97,8 @@ endif;
         <div class="post-image"><img src="../assets/img/posts/single-post01.jpg" alt=""></div>
         <div class="post-content">
             <ul class="post-meta">
-                <li> <?=$post->date;?></li>
-                <li>by <strong><?=$post->author;?></strong></li>
+                <li><i class="fa fa-user" aria-hidden="true"></i> by <strong><?=$post->author;?></strong></li>
+                <li><i class="fa fa-calendar" aria-hidden="true"></i> <?=$post->date;?></li>
             </ul>
             <h1><?=$post->title; ?></h1>
             <p class="lead">
